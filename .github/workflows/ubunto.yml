@@ -7,13 +7,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
-    # ... other steps to build and test your code ...
+    - run: mkdir -p path/to/artifact
 
-    - name: Create artifact
-      uses: actions/upload-artifact@v2
+    - run: echo hello > path/to/artifact/world.txt
+
+    - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: README.md
+        path: path/to/artifact/world.txt
