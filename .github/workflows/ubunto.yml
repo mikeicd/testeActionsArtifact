@@ -1,6 +1,8 @@
-name: Build and Test
+name: Publish GitHub Actions Artifacts Example
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   build-and-test:
